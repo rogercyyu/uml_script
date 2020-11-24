@@ -1,3 +1,15 @@
+DROP TABLE `Customers`;		
+		
+CREATE TABLE `Customers` (		
+`customer_id` mediumint default NULL,		
+`password` TEXT default NULL,		
+`first_name` varchar(45) default NULL,		
+`last_name` varchar(45) default NULL,		
+`billing_address_id` mediumint default NULL,		
+`shipping_address_id` mediumint default NULL,		
+`phone_number` varchar(45) default NULL		
+);	
+
 DROP TABLE `Orders`;
 
 CREATE TABLE `Orders` (

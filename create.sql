@@ -1,20 +1,21 @@
 DROP TABLE `Customers`;		
 		
 CREATE TABLE `Customers` (		
-`customer_id` mediumint default NULL,		
+`customer_id` int primary key,
 `password` TEXT default NULL,		
-`first_name` varchar(255) default NULL,		
-`last_name` varchar(255) default NULL,		
+`first_name` varchar(45) default NULL,		
+`last_name` varchar(45) default NULL,		
 `billing_address_id` mediumint default NULL,		
 `shipping_address_id` mediumint default NULL,		
-`phone_number` varchar(100) default NULL		
+`phone_number` varchar(45) default NULL		
 );		
+Constraint TeamNo_fk Foreign Key (TeamNo) references Team(TeamNo),
 
 
 DROP TABLE `Orders`;
 
 CREATE TABLE `Orders` (
-  `order_id` mediumint default NULL,
+  `order_id` int primary key,
   `order_date` varchar(255),
   `order_status` TEXT default NULL,
   `order_shipping_address_id` mediumint default NULL,
