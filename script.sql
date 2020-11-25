@@ -197,3 +197,23 @@ INSERT INTO `Invoice` (`invoice_id`,`invoice_date`,`payment_method`) VALUES (866
 INSERT INTO `Invoice` (`invoice_id`,`invoice_date`,`payment_method`) VALUES (36543,"May 15, 2020","eu, odio. Phasellus at augue id ante dictum cursus. Nunc"),(73212,"Dec 10, 2019","nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus,"),(40045,"Jul 6, 2020","at arcu. Vestibulum ante ipsum primis in faucibus orci luctus"),(76905,"Mar 24, 2021","sagittis placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla"),(56578,"Apr 22, 2021","Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis"),(68839,"Apr 6, 2020","cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis"),(54112,"Apr 28, 2020","felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris sit"),(36954,"Feb 26, 2021","egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede."),(33793,"Jul 30, 2020","vitae aliquam eros turpis non enim. Mauris quis turpis vitae"),(43216,"Aug 7, 2021","nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus.");
 INSERT INTO `Invoice` (`invoice_id`,`invoice_date`,`payment_method`) VALUES (66213,"Nov 13, 2021","laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend,"),(35758,"Oct 5, 2020","gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet"),(33468,"Sep 20, 2020","aliquet, metus urna convallis erat, eget tincidunt dui augue eu"),(57952,"Jan 3, 2020","iaculis, lacus pede sagittis augue, eu tempor erat neque non"),(59070,"Dec 11, 2019","pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu"),(40368,"May 26, 2020","augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed,"),(58389,"Jul 2, 2021","sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem"),(52751,"Oct 20, 2021","arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum"),(36206,"Jan 30, 2021","condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing"),(34770,"May 30, 2020","magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu");
 INSERT INTO `Invoice` (`invoice_id`,`invoice_date`,`payment_method`) VALUES (73680,"Aug 24, 2020","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor,"),(48807,"Aug 21, 2020","tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac"),(69209,"Jul 10, 2021","Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam"),(76545,"Nov 15, 2020","quis accumsan convallis, ante lectus convallis est, vitae sodales nisi"),(80384,"Feb 10, 2020","iaculis, lacus pede sagittis augue, eu tempor erat neque non"),(88838,"Dec 13, 2019","elit elit fermentum risus, at fringilla purus mauris a nunc."),(35032,"Sep 15, 2021","ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla"),(70917,"Feb 25, 2020","malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam"),(45158,"Apr 20, 2020","justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse"),(73312,"Oct 24, 2021","eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec");
+
+ALTER TABLE Product_Category
+ADD CONSTRAINT FK_Product
+FOREIGN KEY (product_id) REFERENCES Product(product_id);
+
+ALTER TABLE Product_Category
+ADD CONSTRAINT FK_Category
+FOREIGN KEY (category_id) REFERENCES Category(category_id);
+
+ALTER TABLE Product_Option
+ADD CONSTRAINT FK_Product
+FOREIGN KEY (product_id) REFERENCES Product(product_id);
+
+ALTER TABLE Product_Option
+ADD CONSTRAINT FK_Option
+FOREIGN KEY (option_id) REFERENCES Option(option_id);
+
+ALTER TABLE Shipments
+ADD CONSTRAINT FK_Orders
+FOREIGN KEY (order_id) REFERENCES Orders(order_id);
